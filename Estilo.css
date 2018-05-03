@@ -1,0 +1,189 @@
+* { box-sizing: border-box;}
+
+body {
+	margin: 0px;
+	width: 100%;	
+}
+
+	.imagen{
+		text-align: center;
+	}
+
+	a{
+		color: black;
+	}
+
+	.margin60{
+		margin-left: 75%
+	}
+
+	.margin4{	
+		margin-left: 4%;
+	}
+
+	.contenido {width:100%; height:70px; background-color: white;}
+	.izq {width:50%; float:left; text-align:left;}
+	.der {width:50%; float:right; text-align:right; font-size: 12px; margin-top: 60px;}
+
+	/*---------------------------------------------------------------Pie de página----------------------------------------------------------*/
+	footer{
+        position: relative;
+        /* Altura total del footer en px con valor negativo */
+        margin-top: -5px; /* SI NO FUNCIONA, CAMBIAR A 50PX*/
+        /* Altura del footer en px. Se han restado los 5px del margen
+           superior mas los 5px del margen inferior
+        */
+        width: 100%;
+        height: 40px;
+        padding:5px 0px;
+        clear: both;
+        background-color: black;
+        text-align: center;
+        color: white;
+    }
+
+    /* Esta clase define la anchura del contenido y la posicion centrada 
+       El contenido queda centrado y limitado, pero la cabecera y el pie
+       llegan hasta los limites del navegador.
+    */
+    .define{
+    	font-size: 16px;
+    	background-color: black;
+    	color: white;
+        width: 960px;
+        margin: 0 auto;
+    }
+    /*-------------------------------------------------------------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------Formato de artículo-----------------------------------------------------------*/
+    .articulo{
+		align-content: center;
+	}
+	.titulop{
+		font-family: 'Maiandra GD';
+		text-align: center;
+	    font-weight: bold;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 18px;
+	    margin: 4px 2px;
+	    cursor: pointer;
+	}
+	.imagenp img{
+		
+		height: 140px;
+	    width: 140px;		    
+	    cursor: pointer;
+	}
+	.decripp{
+		cursor: normal;
+		text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-weight: normal;
+	    font-size: 14px;
+	    margin: 4px 2px;
+	}
+	.precio{
+		text-align: center;
+	    font-weight: bold;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 16px;
+	    margin: 4px 2px;
+	    cursor: pointer;
+	}
+	/*-------------------------------------------------------------------------------------------------------------------------------------*/
+	/*--------------------------------------------------------Botón negro con letras blancas------------------------------------------------*/
+	button{
+	    background-color: #000; border: none; color: white;
+	    padding: 25px 60px;
+	    text-align: center;
+	    font-weight: bold;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 16px;
+	    margin: 4px 2px;
+	    cursor: pointer;
+	}
+	/*--------------------------------------------------------------------------------------------------------------------------------------*/
+	/*-----------------------------------------------------------Barra de Navegación--------------------------------------------------------*/
+	nav {
+		width: 100%;
+		display: block;
+		z-index: 3;
+		font-family:Arial, Helvetica, sans-serif;
+		background-color: white;
+	}
+
+	nav ul{
+		background-color: black;
+	}
+
+	ul, ol {
+		list-style:none;
+	}
+
+	.nav{
+		display: flex;
+		justify-content: center;
+	}
+	
+	.nav li a {
+		background-color:#000;
+		color:#fff;
+		text-decoration:none;
+		padding:10px 12px;
+		display:block;
+	}
+			
+			.nav li a:hover {
+				background-color:#ffa07a;
+				text-decoration: underline;
+			}
+			
+			.nav li ul {
+				display:none;
+				position:absolute;
+				/*min-width:140px;*/
+			}
+			
+			.nav li:hover > ul {
+				display:block;
+			}
+			
+			.nav li ul li {
+				position:relative;
+			}
+			
+			.nav li ul li ul {
+				right:-140px;
+				top:0px;
+
+			}
+
+			@media only screen and (max-width: 768px) {
+
+				.nav {
+					flex-direction: column;
+					font-size: 80%;
+				}
+
+				.nav li ul li {
+					position: relative;
+				}
+				
+				.nav li ul li ul {
+					right:300px;
+					top:0px;
+				}
+
+				img{
+					width: 90%;
+					margin-top: 20px;
+				}
+
+				.sesion{
+					font-size: 9px;
+				}
+   			 }
+			/*----------------------------------------------------------------------------------------------------------------------------*/
