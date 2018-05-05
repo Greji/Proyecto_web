@@ -11,7 +11,7 @@
 	<?php require "menu.php" ?>
 	</div>
 
-	<br><br><br><br><br><br><br><br><br><br><br><H1 align="center">Ingresa tu domicilio </H1>
+	<H1 align="center">Ingresa tu domicilio </H1>
 
 	<form action="registro2.php" id="a1" align="center" method="post">
 		<table align="center">
@@ -41,6 +41,7 @@
 		<H4> * Campos obligatorios </H4>
 
 		<button onclick="location.href='registrate.php'" type="button">Volver</button>
+		
 		<button type="submit">Continuar</button>
 	</form><br><br><br>
 

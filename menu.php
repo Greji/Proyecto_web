@@ -1,3 +1,17 @@
+<?php 
+if(!isset($_COOKIE['idioma'])){
+     header("Location: index.php");
+}
+if($_COOKIE['idioma']=='en'){
+  echo "<div id='google_translate_element'></div>
+<script type='text/javascript' src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></script>
+    <script type='text/javascript'>
+      function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+    </script>";
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,15 +24,10 @@
 <body>
 	<nav>
 		<div class="contenido">
-			<div id="google_translate_element"></div><script type="text/javascript">
-					function googleTranslateElementInit() {
-					  new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-					}
-					</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 			<div class="izq"><img src="morango.jpg"></div>
 			<div class="der">
 					<a href="iniciarsesion.php"> 👤 Iniciar sesión</a> 
-					<a href="registro1.php"> ➽	Registrarse</a>
+					<a href="registrate.php"> ➽	Registrarse</a>
 
 					
 

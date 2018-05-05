@@ -5,6 +5,18 @@ body {
 	width: 100%;	
 }
 
+.hola{
+    display: flex;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.center h2 {
+	text-align:center;
+}
 	.imagen{
 		text-align: center;
 	}
