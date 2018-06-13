@@ -35,31 +35,25 @@ if($_COOKIE['idioma']=='en'){
 		</div>
 		<ul class="nav">
 			<li><a href="index.php">Inicio</a></li>
-			<li><a href="producto.php?tipo=1">Mujeres</a>
+			<li><a href="productoAdministrador.php?tipo=1">Mujeres</a>
 				<ul>
-					<li><a href="producto.php?tipo=1">Accesorios</a></li>
-					<li><a href="producto.php?tipo=2">Blusas</a></li>
-					<li><a href="producto.php?tipo=3">Faldas</a></li>
-					<li><a href="producto.php?tipo=4">Pantalones</a></li>
-					<li><a href="producto.php?tipo=5">Pullovers</a></li>
-					<li><a href="producto.php?tipo=6">Vestidos</a></li>
+					<li><a href="productoAdministrador.php?tipo=1">Accesorios</a></li>
+					<li><a href="productoAdministrador.php?tipo=2">Blusas</a></li>
+					<li><a href="productoAdministrador.php?tipo=3">Faldas</a></li>
+					<li><a href="productoAdministrador.php?tipo=4">Pantalones</a></li>
+					<li><a href="productoAdministrador.php?tipo=5">Pullovers</a></li>
+					<li><a href="productoAdministrador.php?tipo=6">Vestidos</a></li>
 				</ul>
 			</li>
-			<li ><a href="producto.php?tipo=7"> Hombres</a>
+			<li ><a href="productoAdministrador.php?tipo=7"> Hombres</a>
 				<ul>
-					<li><a href="producto.php?tipo=7">Accesorios</a></li>
-					<li><a href="producto.php?tipo=8">Camisetas</a></li>
-					<li><a href="producto.php?tipo=9">Pantalones</a></li>
-					<li><a href="producto.php?tipo=10">Pullovers</a></li>
+					<li><a href="productoAdministrador.php?tipo=7">Accesorios</a></li>
+					<li><a href="productoAdministrador.php?tipo=8">Camisetas</a></li>
+					<li><a href="productoAdministrador.php?tipo=9">Pantalones</a></li>
+					<li><a href="productoAdministrador.php?tipo=10">Pullovers</a></li>
 				</ul>
 			</li>
-			<li><a href=""> Acerca de nosotros</a>
-				<ul >
-					<li><a href=""> Historia</a></li>
-					<li><a href=""> Visión</a></li>
-				</ul>
-			</li>
-			<li ><a href="contacto.php"> Contáctanos </a></li>
+			<li><a href="compraAdministrador.php">Compras</a></li>
 
 		</ul>
 	</nav>
