@@ -42,7 +42,7 @@
 
 
 
-	echo "<form action='productoAdministrador.php' method='POST'>
+	echo "<form action='modificarProducto.php' method='POST'>
 			<table border=2px>";
 
 	for($n=0; $n<$nfilas; $n++){

@@ -35,7 +35,7 @@ if($_COOKIE['idioma']=='en'){
 		</div>
 		<ul class="nav">
 			<li><a href="index.php">Inicio</a></li>
-			<li><a href="productoAdministrador.php?tipo=1">Mujeres</a>
+			<li><a href="productoAdministrador.php?tipo=0">Mujeres</a>
 				<ul>
 					<li><a href="productoAdministrador.php?tipo=1">Accesorios</a></li>
 					<li><a href="productoAdministrador.php?tipo=2">Blusas</a></li>
@@ -45,7 +45,7 @@ if($_COOKIE['idioma']=='en'){
 					<li><a href="productoAdministrador.php?tipo=6">Vestidos</a></li>
 				</ul>
 			</li>
-			<li ><a href="productoAdministrador.php?tipo=7"> Hombres</a>
+			<li ><a href="productoAdministrador.php?tipo=11"> Hombres</a>
 				<ul>
 					<li><a href="productoAdministrador.php?tipo=7">Accesorios</a></li>
 					<li><a href="productoAdministrador.php?tipo=8">Camisetas</a></li>
