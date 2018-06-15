@@ -45,25 +45,63 @@
 	echo "<form action='modificarProducto.php' method='POST'>
 			<table border=2px>";
 
+
+  echo "<tr>
+          <td>Producto</td>
+          <td>Nombre</td>
+          <td>Descripcion</td>
+          <td>Precio</td>
+          <td>Existencias</td>
+        </tr>";
+
 	for($n=0; $n<$nfilas; $n++){
 		$filas= mysqli_fetch_array($consulta);
 
 
 		echo "<tr>
 			  	<td><img src='".$filas['direccion']."' width='100' height='90'></td>
-			  	<td width='600'>".$filas['nombre']."</td>
-			  	<input type='hidden' name='producto' value='".$filas['id_producto']."'>
-			  	<td><input type='submit' name='modificar' value='Modificar'/></td>
+			  	<td>".$filas['nombre']."</td>
+          <td>".$filas['descripcion']."</td>
+          <td width='50'>".$filas['precio']."</td>
+          <td>".$filas['existencias']." <br> Agregar Productos <input type='text' name='agregarE' width='20'/> 
+          <a href='productoAdministrador.php?producto=".$filas['id_producto']."'>+</a></td>
+
 			  </tr>";
 
 			}
 
 	echo "</table></form>";
 
+  if (isset($_GET['producto'])) {
+      $id_producto = $_GET['producto'];
+      $consulta=mysqli_query($connect,"SELECT existencias FROM producto WHERE id_producto=$id_producto");
+
+      if (mysqli_num_rows ($consulta)>0) {
+      
+        $filas= mysqli_fetch_array($consulta);
+        $cantidadActual = $filas['existencias'];
+        $existencias = 0;
+        $existencias += $cantidadActual;
+        echo $existencias;
+        mysqli_query($connect, "UPDATE producto SET existencias='$existencias' WHERE id_producto=$id_producto");
+      }
+
+      
+
+
+    }
+
 	?>
+
+
 
 	<?php include "pie.php"?>
 	
 
 	</body>
 </html>
+
+
+
+
+<!--  -->
