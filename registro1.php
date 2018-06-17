@@ -32,7 +32,7 @@ else{
 				if($password==$confirm_pass&&$correo==$confirm_correo&&is_numeric($tarjeta)&&$cant_tarjeta==16&&is_numeric($cvv)&&$cant_cvv==3){
 					$_SESSION['registro']=$username;
 
-					mysqli_query($connect, "INSERT INTO usuario (id_genero, nombre, contrasena, email, telefono, tarjeta, cvv, mes_exp, ano_exp) VALUES ('$sexo', '$nombre', '$password', '$correo', '$telefono', '$tarjeta', '$cvv', '$mes', '$ano')") or die('<script>alert("Se murio")</script>');
+					mysqli_query($connect, "INSERT INTO usuario (id_genero, nombre, contrasena, email, telefono, id_usuario, cvv, mes_exp, ano_exp) VALUES ('$sexo', '$nombre', '$password', '$correo', '$telefono', '$tarjeta', '$cvv', '$mes', '$ano')") or die('<script>alert("Se murio")</script>');
 
 					header("Location: registrate2.php");
 				}
