@@ -53,6 +53,7 @@ if($_COOKIE['idioma']=='en'){
 					<li><a href="productoAdministrador.php?tipo=10">Pullovers</a></li>
 				</ul>
 			</li>
+			<li><a href="descuentoAdministrador.php">Modificar descuentos</a></li>
 			<li><a href="compraAdministrador.php">Compras</a></li>
 
 		</ul>

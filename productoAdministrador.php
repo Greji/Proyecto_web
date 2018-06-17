@@ -64,7 +64,7 @@
           <td>".$filas['descripcion']."</td>
           <td width='50'>".$filas['precio']."</td>
           <td>".$filas['existencias']." <br> Agregar Productos <input type='text' name='agregarE' width='20'/> 
-          <a href='productoAdministrador.php?producto=".$filas['id_producto']."'>+</a></td>
+          <a href='existenciasDescuentos.php?producto=".$filas['id_producto']."'>+</a></td>
 
 			  </tr>";
 
@@ -72,24 +72,7 @@
 
 	echo "</table></form>";
 
-  if (isset($_GET['producto'])) {
-      $id_producto = $_GET['producto'];
-      $consulta=mysqli_query($connect,"SELECT existencias FROM producto WHERE id_producto=$id_producto");
-
-      if (mysqli_num_rows ($consulta)>0) {
-      
-        $filas= mysqli_fetch_array($consulta);
-        $cantidadActual = $filas['existencias'];
-        $existencias = 0;
-        $existencias += $cantidadActual;
-        echo $existencias;
-        mysqli_query($connect, "UPDATE producto SET existencias='$existencias' WHERE id_producto=$id_producto");
-      }
-
-      
-
-
-    }
+  
 
 	?>
 
