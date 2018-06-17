@@ -23,6 +23,7 @@ if (is_uploaded_file($_FILES["userfile"]["tmp_name"])){
 		$id = $_POST['id'];
 		$tipo = $_POST['tipo'];
 		$nombre = $_POST['nombre'];
+		$descrip = $_POST['descrip']
 		$precio = $_POST['precio'];
 		$stock = $POST['stock'];
 		$desc10 = $POST['desc10'];
@@ -67,14 +68,15 @@ if (is_uploaded_file($_FILES["userfile"]["tmp_name"])){
 			<td><H2>Descuentos:</H2></td>
 		</tr>
 		<tr>
-			<td align="center"><H2>Descripción del producto:</H2></td>
+			<td align="center"><H2>Nombre del producto:</H2></td>
 			<td align="center"><input type="text" name="nombre"></td>
+			<td align="center"><H2>Descripción del producto:</H2></td>
 			<td align="center"><H2>Descuento de 10% a partir de:</H2></td>
 			<td align="center"><input type="text" name="desc10"> artículos</td>
 			<td></td>
 		</tr>
 		<tr>
-			<td align="center"><H2>Descripción del producto:</H2></td>
+			
 			<td align="center"><input type="text" name="descrip"></td>
 			<td align="center"><H2>Descuento de 20% a partir de:</H2></td>
 			<td align="center"><input type="text" name="desc20"> artículos</td>

@@ -55,11 +55,10 @@
 			$mes = date("M", mktime(0, 0, 0, $mes, ($dia + $j), $anno));
 			if ($semana == "Monday")	$l = "lunes";	if ($semana == "Tuesday")	$l = "martes";	if ($semana == "Wednesday")	$l = "miércoles";
 			if ($semana == "Thursday")	$l = "jueves";	if ($semana == "Friday")	$l = "viernes";	
-			if ($mes == "Juanuary")	$M = "enero";	if ($mes == "February")	$M = "febrero";	if ($mes == "March")	$M = "marzo";	
-			if ($mes == "April")	$M = "abril";	if ($mes == "May")	$M = "mayo";	if ($mes == "May")	$M = "mayo";	
-			if ($mes == "May")	$M = "mayo";	if ($mes == "June")	$M = "junio";	if ($mes == "July")	$M = "julio";	
-			if ($mes == "August")	$M = "agosto";	if ($mes == "September")	$M = "septiembre";	if ($mes == "October")	$M = "octubre";	
-			if ($mes == "November")	$M = "noviembre";	if ($mes == "December")	$M = "diciembre";			
+			if ($mes == "Jan")	$M = "enero";	if ($mes == "Feb")	$M = "febrero";	if ($mes == "Mar")	$M = "marzo";	
+			if ($mes == "Apr")	$M = "abril";	if ($mes == "May")	$M = "mayo";	if ($mes == "Jun")	$M = "junio";	
+			if ($mes == "Jul")	$M = "julio";	if ($mes == "Aug")	$M = "agosto";	if ($mes == "Sep")	$M = "septiembre";	
+			if ($mes == "Oct")	$M = "octubre";	if ($mes == "Nov")	$M = "noviembre";	if ($mes == "Dec")	$M = "diciembre";			
 		}
 
 		$hoy = date("d M Y");
@@ -77,7 +76,7 @@
 				  <option value='M' selected>M</option>
 				  <option value='L'>L</option>
 			  	</select>
-			  	<br><input type='submit' class='boton' name='' value='Agregar al carrito' />
+			  	<br><input type='submit' class='button' name='' value='Agregar al carrito' style='background-color: #000; border: none; color: white;padding: 25px 60px;text-align: center;font-weight: bold;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;cursor: pointer;'/>
 		        </div>
 		      </div><br>
 		      </div>
