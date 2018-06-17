@@ -28,14 +28,16 @@ if($_COOKIE['idioma']=='en'){
 			<div class="der">
 					<a href="iniciarsesion.php"> 👤 Iniciar sesión</a> 
 					<a href="registrate.php"> ➽	Registrarse</a>
-
-					
-
 			</div>
 		</div>
 		<ul class="nav">
 			<li><a href="index.php">Inicio</a></li>
+<<<<<<< HEAD
+			<li><a href="agregar_producto.php">Agregar producto</a></li>
 			<li><a href="productoAdministrador.php?tipo=1">Mujeres</a>
+=======
+			<li><a href="productoAdministrador.php?tipo=0">Mujeres</a>
+>>>>>>> 27c21198353dcd4c0dac812ad5829fbb9a600428
 				<ul>
 					<li><a href="productoAdministrador.php?tipo=1">Accesorios</a></li>
 					<li><a href="productoAdministrador.php?tipo=2">Blusas</a></li>
@@ -45,7 +47,7 @@ if($_COOKIE['idioma']=='en'){
 					<li><a href="productoAdministrador.php?tipo=6">Vestidos</a></li>
 				</ul>
 			</li>
-			<li ><a href="productoAdministrador.php?tipo=7"> Hombres</a>
+			<li ><a href="productoAdministrador.php?tipo=11"> Hombres</a>
 				<ul>
 					<li><a href="productoAdministrador.php?tipo=7">Accesorios</a></li>
 					<li><a href="productoAdministrador.php?tipo=8">Camisetas</a></li>
@@ -53,6 +55,7 @@ if($_COOKIE['idioma']=='en'){
 					<li><a href="productoAdministrador.php?tipo=10">Pullovers</a></li>
 				</ul>
 			</li>
+			<li><a href="descuentoAdministrador.php">Modificar descuentos</a></li>
 			<li><a href="compraAdministrador.php">Compras</a></li>
 
 		</ul>

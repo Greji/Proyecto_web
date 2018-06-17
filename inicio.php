@@ -8,7 +8,17 @@
 	<link rel="shortcut icon" href="icono.ico" /> 
 </head>
 <body>
-	<?php require "menu.php" ?>
+	<?php 
+	session_start();
+	if($_SESSION["username"]=="admin") {
+
+		require "menuAdministrador.php";
+		
+	}else{
+
+		require "menu.php"; }
+
+	?>
 	
 	<div class="slider">
 		<ul>

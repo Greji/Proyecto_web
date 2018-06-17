@@ -42,8 +42,17 @@
 
 
 
-	echo "<form action='productoAdministrador.php' method='POST'>
+	echo "<form action='modificarProducto.php' method='POST'>
 			<table border=2px>";
+
+
+  echo "<tr>
+          <td>Producto</td>
+          <td>Nombre</td>
+          <td>Descripcion</td>
+          <td>Precio</td>
+          <td>Existencias</td>
+        </tr>";
 
 	for($n=0; $n<$nfilas; $n++){
 		$filas= mysqli_fetch_array($consulta);
@@ -51,19 +60,31 @@
 
 		echo "<tr>
 			  	<td><img src='".$filas['direccion']."' width='100' height='90'></td>
-			  	<td width='600'>".$filas['nombre']."</td>
-			  	<input type='hidden' name='producto' value='".$filas['id_producto']."'>
-			  	<td><input type='submit' name='modificar' value='Modificar'/></td>
+			  	<td>".$filas['nombre']."</td>
+          <td>".$filas['descripcion']."</td>
+          <td width='50'>".$filas['precio']."</td>
+          <td>".$filas['existencias']." <br> Agregar Productos <input type='text' name='agregarE' width='20'/> 
+          <a href='existenciasDescuentos.php?producto=".$filas['id_producto']."'>+</a></td>
+
 			  </tr>";
 
 			}
 
 	echo "</table></form>";
 
+  
+
 	?>
+
+
 
 	<?php include "pie.php"?>
 	
 
 	</body>
 </html>
+
+
+
+
+<!--  -->
