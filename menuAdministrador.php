@@ -33,8 +33,7 @@ if($_COOKIE['idioma']=='en'){
 		<ul class="nav">
 			<li><a href="index.php">Inicio</a></li>
 			<li><a href="agregar_producto.php">Agregar producto</a></li>
-			<li><a href="productoAdministrador.php?tipo=1">Mujeres</a>
-			<li><a href="productoAdministrador.php?tipo=0">Mujeres</a>
+			<li><a href="" style="font-weight: bold;">Productos:</a>
 
 			<li><a href="productoAdministrador.php?tipo=0">Mujeres</a>
 				<ul>

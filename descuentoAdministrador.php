@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Modificar Descuentos</title>
+	<link rel="shortcut icon" href="icono.ico" /> 
 </head>
 <body>
 

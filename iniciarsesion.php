@@ -50,16 +50,8 @@
 				
 			}else{
 				echo '<script>alert("Correo o contraseña incorrecta")</script>';
-			}
-
-			
-
-
-
-			
+			}	
 		}
-		
-
 	 ?>
 
 	<?php
