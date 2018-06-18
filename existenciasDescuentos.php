@@ -42,8 +42,8 @@
     echo "<form name='formModificar' action='existenciasDescuentos.php' method='POST' align='center'>
           <input type='hidden' name='id_producto' value='$id_producto'><table border=2px>";
 
-   // echo "<form action='modificarProducto.php' method='POST' align='center'>
-     //   <table border=2px>";
+   echo "<form action='modificarProducto.php' method='POST' align='center'>
+   <table border=2px>";
 
     echo "<tr>
             <td><b>Imagen del producto</b></td>
@@ -68,7 +68,7 @@
 
         }
 
-    echo "</table></form>";
+    echo "</table></form></form>";
 
     if(isset($_POST['Agregar'])){
 
@@ -76,10 +76,9 @@
       $nfilas = mysqli_num_rows ($consulta);
       $filas= mysqli_fetch_array($consulta);
       $existencias = $_POST['agregarEx'];
-      echo $filas['existencias'];
-      echo $existencias."<br>";
       $existencias += $filas['existencias'];
-      mysqli_query($connect, "UPDATE producto SET existencias='$existencias' WHERE id_producto=$id_producto");
+      mysqli_query($connect, "UPDATE producto SET existencias='$existencias' WHERE id_producto='$id_producto'");
+      echo "Antes, usted contaba con ".$filas['existencias'].". Ahora, las existencias son ".$existencias.". <br>";
     }
   ?>
 
