@@ -22,6 +22,16 @@ if($_COOKIE['idioma']=='en'){
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
+	<style type="text/css">
+		.nada{
+			background-color:#000;
+			color:#fff;
+			text-decoration:none;
+			padding:10px 12px;
+			display:block; 
+			font-weight: bold
+		}
+	</style>
 	<nav>
 		<div class="contenido">
 			<div class="izq"><img src="morango.jpg"></div>
@@ -33,7 +43,7 @@ if($_COOKIE['idioma']=='en'){
 		<ul class="nav">
 			<li><a href="index.php">Inicio</a></li>
 			<li><a href="agregar_producto.php">Agregar producto</a></li>
-			<li><a href="" style="font-weight: bold;">Productos:</a>
+			<li class="nada">Productos:</li>>
 
 			<li><a href="productoAdministrador.php?tipo=0">Mujeres</a>
 				<ul>

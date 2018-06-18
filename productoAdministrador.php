@@ -62,14 +62,13 @@
 
   	for($n=0; $n<$nfilas; $n++){
   		$filas= mysqli_fetch_array($consulta);
-
   		echo "<tr>
   			  	<td><img src='".$filas['direccion']."' width='200' height='180'></td>
-  			  	<td>".$filas['nombre']."</td>
-            <td>".$filas['descripcion']."</td>
+  			  	<td width='260'>".$filas['nombre']."</td>
+            <td width='500'>".$filas['descripcion']."</td>
             <td width='100'>".$filas['precio']."</td>
-            <td><b>".$filas['existencias']."</b> en stock. Agregar: <input type='text' name='agregarE' width='20'/> 
-            <a class='button' href='existenciasDescuentos.php?producto=".$filas['id_producto']."'>Agregar productos</a></td>
+            <td width='370'><b>".$filas['existencias']."</b> en stock. <br>
+            <a class='button' href='existenciasDescuentos.php?producto=".$filas['id_producto']."'>Modificar</a></td>
   			    </tr>";
 
   	}
