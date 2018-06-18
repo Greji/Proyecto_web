@@ -8,7 +8,6 @@
 
 	<?php
 		include 'menuAdministrador.php';
-
 		$connect = new mysqli("localhost", "root", "", "morango");
 
    		if(mysqli_connect_error()){
@@ -16,7 +15,6 @@
    		}
 
 		if (isset($_POST['modificar'])) {
-
 			$cantidad1 = $_POST['numeroPrendas1'];
 			$cantidad2 = $_POST['numeroPrendas2'];
 			$cantidad3 = $_POST['numeroPrendas3'];
@@ -33,37 +31,30 @@
 		    mysqli_query($connect, "UPDATE descuentos SET cantidad_articulo='$cantidad1', porcentaje='$descuento1' WHERE id_descuento=1");
 		    mysqli_query($connect, "UPDATE descuentos SET cantidad_articulo='$cantidad2', porcentaje='$descuento2' WHERE id_descuento=2");
 		    mysqli_query($connect, "UPDATE descuentos SET cantidad_articulo='$cantidad3', porcentaje='$descuento3' WHERE id_descuento=3");
-
-
 		}
 
 	?>
 
 	<form id="formDescuento" name="formDescuento" action="descuentoAdministrador.php" method="POST"> 
 
-		Descuento 1, a partir de: <input type="text" name="numeroPrendas1" id="numeroPrendas1" /> artículo del mismo tipo
+		Descuento #1, a partir de:<input type="text" name="numeroPrendas1" id="numeroPrendas1" size="1" /> artículos
 		Porcentaje<input type="text" id="descuento1" name="descuento1" />
 		<br>
-		Descuento, a partir de:<input type="text" name="numeroPrendas2" id="numeroPrendas2"/>artículo del mismo tipo
+		Descuento #2, a partir de:<input type="text" name="numeroPrendas2" id="numeroPrendas2" size="1" /> artículos
 		Porcentaje<input type="text" id="descuento2" name="descuento2" />
 		<br>
-		Descuento, a partir de:<input type="text" name="numeroPrendas3" id="numeroPrendas3">artículo del mismo tipo
+		Descuento #3, a partir de:<input type="text" name="numeroPrendas3" id="numeroPrendas3" size="1"> artículos
 		Porcentaje<input type="text" id="descuento3" name="descuento3" />
 
 		<input type="submit" name="modificar" value="Modificar Descuentos"/>
 
 	</form>
 
-
-
 	<?php
-
-   		
 
    		$consulta=mysqli_query($connect,"SELECT * FROM descuentos" );
     	$nfilas = mysqli_num_rows ($consulta);
-    	$nfilas = mysqli_num_rows ($consulta);
-    	
+    	$nfilas = mysqli_num_rows ($consulta);    	
 
     	$descuento = array(
     		1 => 0, 
@@ -82,17 +73,9 @@
     		$descuento[$i] = $filas['porcentaje'] ;
     		$cantidad[$i] = $filas['cantidad_articulo'];
     	}
-
 	?>
 
-	
-
-
-	
-
 	<script type="text/javascript">
-
-		
 
 		var d1 = "<?php echo $descuento['1'];  ?>";
 		var d2 = "<?php echo $descuento['2'];  ?>";
@@ -111,8 +94,5 @@
 		document.getElementById('numeroPrendas3').value=c3;
 
 	</script>
-	
-
-
 </body>
 </html>

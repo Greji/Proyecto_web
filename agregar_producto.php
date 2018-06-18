@@ -18,29 +18,32 @@
 
 	if (is_uploaded_file($_FILES["userfile"]["tmp_name"])){
 		if ($_FILES["userfile"]["type"] == "image/jpeg" || $_FILES["userfile"]["type"] == "image/jpg" || $_FILES["userfile"]["type"] == "image/png"){
-			#obtener propiedades imagen
-			$info = getimagesize ($_FILES["userfile"]["tmp_name"]);
-			$id = $_POST['id'];
 			$tipo = $_POST['tipo'];
 			$nombre = $_POST['nombre'];
 			$descrip = $_POST['descrip'];
 			$precio = $_POST['precio'];
-			$imageEscapes = $mysqli->real_escape_string(file_get_contents($_FILES["userfile"]["tmp_name"]));
+			$stock = $_POST['existencias'];
+			$image = $_FILES["userfile"]["name"];
+			$folder = 0;
+
+			//$imageEscapes = $mysqli->real_escape_string(file_get_contents($_FILES["userfile"]["name"]));
 
 			//insertar producto con id de imagen
-			if ($tipo == 1)	$folder="./Mujer/accesorios/";	if ($tipo == 6)		$folder="./Mujer/vestidos/";	
-			if ($tipo == 2)	$folder="./Mujer/blusas/";		if ($tipo == 7)		$folder="./Hombre/accesorios/";
-			if ($tipo == 3)	$folder="./Mujer/faldas/";		if ($tipo == 8)		$folder="./Hombre/camisetas/";
-			if ($tipo == 4)	$folder="./Mujer/pantalones/";	if ($tipo == 9)		$folder="./Hombre/pantalones/";
-			if ($tipo == 5)	$folder="./Mujer/pullovers/";	if ($tipo == 10)	$folder="./Hombre/pullovers/";
-			
-			$tmp_name = $_FILES["image"]["tmp_name"];
-			move_uploaded_file( $tmp_name,"$folder".$_FILES["image"]["name"]);
-			$sql = "INSERT INTO producto(id_tipo,nombre,descripcion,precio,stock,imagen) VALUES (".$tipo.",".$nombre.",".$descri´p.",".$precio.",".$stock.",'$folder".$_FILES["image"]["name"]."')";
-			$mysqli -> query($sql);
+			if ($tipo == 1)	$folder="Mujer/accesorios/";	if ($tipo == 6)		$folder="Mujer/vestidos/";	
+			if ($tipo == 2)	$folder="Mujer/blusas/";		if ($tipo == 7)		$folder="Hombre/accesorios/";
+			if ($tipo == 3)	$folder="Mujer/faldas/";		if ($tipo == 8)		$folder="Hombre/camisetas/";
+			if ($tipo == 4)	$folder="Mujer/pantalones/";	if ($tipo == 9)		$folder="Hombre/pantalones/";
+			if ($tipo == 5)	$folder="Mujer/pullovers/";		if ($tipo == 10)	$folder="Hombre/pullovers/";
 
-			//mostrar la imagen agregada
-			echo "<div class = 'mensaje'>Imagen agregada con el id".$id."</div>";
+			$ubicacion = $folder.$image;
+
+			echo $ubicacion;
+			
+			/*$sql = "INSERT INTO producto(id_tipo,nombre,descripcion,precio,existencias,direccion) VALUES (".$tipo.",".$nombre.",".$descrip.",".$precio.",".$stock.","$ubicacion.")";
+			$mysqli -> query($sql);
+			*/
+
+			mysqli_query($mysqli, "INSERT INTO producto(id_tipo,nombre,descripcion,precio,existencias,direccion) VALUES ('$tipo','$nombre','$descrip','$precio','$stock','$ubicacion'");
 		}
 		else
 			echo "<div class = 'error'> Error: El formato del archivo debe ser JPG o PNG</div>";
@@ -52,7 +55,7 @@
 	</div>
 
 	<form enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST" align="center">
-		<H2>Agrega un producto con su imagen (460 x 580 px)</H2>
+		<H2>Agrega un producto con su imagen (460 x 580 px). Recuerda que debe estar en la carpeta seleccionada</H2>
 		<table align="center">
 			<tr>
 				<td align="center"><H2>Tipo de producto:</H2></td>
@@ -67,8 +70,8 @@
 			<tr>
 				<td align="center"><H2>Nombre del producto:</H2></td>
 				<td align="center"><input type="text" name="nombre"></td>
-				<td align="center"><H2>Stock:</H2></td>
-				<td align="center"><input type="text" name="stock"></td>
+				<td align="center"><H2>Existencia:</H2></td>
+				<td align="center"><input type="text" name="existencias"></td>
 				<td></td>
 			</tr>
 			<tr>
