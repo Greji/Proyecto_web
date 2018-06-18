@@ -1,8 +1,5 @@
-
 div.barra{
     height: 20%;
-
-
 }
 
 div.gallery {
@@ -50,28 +47,4 @@ div.desc {
     content: "";
     display: table;
     clear: both;
-}
-
-button{
-    background-color: #000; border: none; color: white;
-    padding: 25px 60px;
-    text-align: center;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-.button{
-    background-color: #000; border: none; color: white;
-    padding: 25px 60px;
-    text-align: center;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
 }

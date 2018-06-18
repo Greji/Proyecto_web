@@ -5,6 +5,19 @@
   <meta charset="utf-8">
 </head>
 <body>
+    <style type="text/css">
+    .button{
+      background-color: #000; border: none; color: white;
+      padding: 25px 60px;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer; 
+    }
+    </style>
 
     <div><?php include 'menuAdministrador.php'; ?></div>
 
@@ -40,28 +53,27 @@
   			<table border=2px>";
 
     echo "<tr>
-            <td>Imagen del producto</td>
-            <td>Nombre del producto</td>
-            <td>Descripción</td>
-            <td>Precio unitario</td>
-            <td>Existencias</td>
+            <td><b>Imagen del producto</b></td>
+            <td><b>Nombre del producto</b></td>
+            <td><b>Descripción</b></td>
+            <td><b>Precio unitario</b></td>
+            <td><b>Existencias</b></td>
           </tr>";
 
   	for($n=0; $n<$nfilas; $n++){
   		$filas= mysqli_fetch_array($consulta);
 
   		echo "<tr>
-  			  	<td><img src='".$filas['direccion']."' width='300' height='270'></td>
+  			  	<td><img src='".$filas['direccion']."' width='200' height='180'></td>
   			  	<td>".$filas['nombre']."</td>
             <td>".$filas['descripcion']."</td>
             <td width='100'>".$filas['precio']."</td>
-            <td>".$filas['existencias']." en stock <br> Agregar productos <input type='text' name='agregarE' width='20'/> 
-            <a class='button' href='existenciasDescuentos.php?producto=".$filas['id_producto']."'>+</a></td>
-
-  			  </tr>";
+            <td><b>".$filas['existencias']."</b> en stock. Agregar: <input type='text' name='agregarE' width='20'/> 
+            <a class='button' href='existenciasDescuentos.php?producto=".$filas['id_producto']."'>Agregar productos</a></td>
+  			    </tr>";
 
   	}
-  	echo "</table></form>";
+  	echo "</table></form><br>";
 	?>
 
 	<?php include "pie.php" ?>
