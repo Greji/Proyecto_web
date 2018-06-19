@@ -68,10 +68,9 @@
 	      		<div class='gallery'><a href='producto_desc.php?producto=".$filas['id_producto']."'>
 	      		<img src='".$filas['direccion']."' alt='".$filas['nombre']."' width='300' height='200'></a>
 		        <div class='desc' style='margin-top: -10%;'><i><H3>".$filas['nombre']."</H3></i>
-		        <b>Precio:  </b>$".$filas['precio']." 
+		        <b>Precio:  </b>$".$filas['precio'].".00 MXN 
 		        <br>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 		        <form action='carrito.php' method='post'>
 		        <input type='hidden' name='id_producto' value='".$filas['id_producto']."'>
 		        <input type='hidden' name='direccion' value='".$filas['direccion']."'>
@@ -80,13 +79,9 @@
 		        Cantidad <br>
 		        <input type='button' id='menos' name='menos' value='-' onclick='decrementar();' /> 
 		        <input type='text' id='cantidad' name='cantidad' value='1' width='30px'/> <input type='button' id='mas' name='mas' value='+' onclick='agregar();' /> 
-			  	<br><input type='submit' class='boton' name='' value='Agregar al carrito' /> </form>
-=======
-			  	<br><input type='submit' class='button' name='' value='Agregar al carrito' style='background-color: #000; border: none; color: white;padding: 25px 60px;text-align: center;font-weight: bold;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;cursor: pointer;  margin-bottom: -10%;'/>
->>>>>>> 7c76ebed11bb8c40ecf862f60b61b0dd3ed09412
-=======
-			  	<br><input type='submit' class='button' name='' value='Agregar al carrito' style='background-color: #000; border: none; color: white;padding: 25px 60px;text-align: center;font-weight: bold;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;cursor: pointer;  margin-bottom: -10%;'/>
->>>>>>> 7c76ebed11bb8c40ecf862f60b61b0dd3ed09412
+
+			  	<br><input type='submit' class='button' name='' value='Agregar al carrito' style='background-color: #000; border: none; color: white;padding: 25px 60px;text-align: center;font-weight: bold;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;cursor: pointer;  margin-bottom: -10%;'/></form>
+
 		        </div>
 		      </div></form><br>
 		      </div>
@@ -98,26 +93,18 @@
 
   <div class='clearfix'></div>
 
-
-
   <script type="text/javascript">
   	
   	function agregar(){
-
-  		 
-
   		document.getElementById('cantidad').value++;
   	}
 
   	function decrementar(){
-
   		var aux =document.getElementById('cantidad').value;
-
   		if (aux > 1) {
   			document.getElementById('cantidad').value--;
   		}
   	}
-
 
   </script>
 
