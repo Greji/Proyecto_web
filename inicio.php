@@ -11,7 +11,7 @@
 	<?php 
 	session_start();
 	if(session_status()==PHP_SESSION_ACTIVE){
-		if ($_SESSION["username"]=="admin"){
+		if (isset($_SESSION["username"]) && ($_SESSION["username"]=="admin")){
 			require "menuAdministrador.php";
 		}
 		else{

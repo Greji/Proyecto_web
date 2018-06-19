@@ -28,13 +28,13 @@ if($_COOKIE['idioma']=='en'){
 			<div class="izq"><img src="morango.jpg"></div>
 			<div class="der">
 				<?php 
-					if (session_status() == PHP_SESSION_NONE){
-						echo "<a href='iniciarsesion.php'> 👤 Iniciar sesion</a> 
-						<a href='registrate.php'> ➽	Registrarse</a>";
-					}
-					if ((session_status() == PHP_SESSION_ACTIVE) && ($_SESSION["username"] != NULL)){
+					if ((session_status() == PHP_SESSION_ACTIVE) && (isset($_SESSION["username"]))){
 						echo "Bienvenido, <b>".$_SESSION['username']."</b>
 						<a href='cerrarsesion.php'> ➽	Cerrar sesion</a>";
+					}
+					else{
+						echo "<a href='iniciarsesion.php'> 👤 Iniciar sesion</a> 
+						<a href='registrate.php'> ➽	Registrarse</a>";
 					}
 				?>
 
@@ -60,13 +60,13 @@ if($_COOKIE['idioma']=='en'){
 					<li><a href="producto.php?tipo=10">Pullovers</a></li>
 				</ul>
 			</li>
-			<li><a href=""> Acerca de nosotros</a>
+			<?php /*<li><a href=""> Acerca de nosotros</a>
 				<ul >
 					<li><a href=""> Historia</a></li>
 					<li><a href=""> Visión</a></li>
 				</ul>
 			</li>
-			<li ><a href="contacto.php"> Contáctanos </a></li>
+			*/?>
 			<li ><a href="contacto.php"> Contáctanos </a></li>
 
 		</ul>
