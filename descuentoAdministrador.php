@@ -2,7 +2,9 @@
 <html>
 <head>
 	<title>Modificar Descuentos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="shortcut icon" href="icono.ico" /> 
+	<meta charset="utf-8">
 </head>
 <body>
 
@@ -34,20 +36,30 @@
 		}
 
 	?>
-
-	<form id="formDescuento" name="formDescuento" action="descuentoAdministrador.php" method="POST"> 
-
-		Descuento #1, a partir de:<input type="text" name="numeroPrendas1" id="numeroPrendas1" size="1" /> artículos
-		Porcentaje<input type="text" id="descuento1" name="descuento1" />
-		<br>
-		Descuento #2, a partir de:<input type="text" name="numeroPrendas2" id="numeroPrendas2" size="1" /> artículos
-		Porcentaje<input type="text" id="descuento2" name="descuento2" />
-		<br>
-		Descuento #3, a partir de:<input type="text" name="numeroPrendas3" id="numeroPrendas3" size="1"> artículos
-		Porcentaje<input type="text" id="descuento3" name="descuento3" />
-
-		<input type="submit" name="modificar" value="Modificar Descuentos"/>
-
+	<form id="formDescuento" name="formDescuento" action="descuentoAdministrador.php" method="POST" align="center"> 
+		<table border=2px align="center">
+			<tr>
+	            <td><b>Descuento</b></td>
+	            <td><b>Artículos</b></td>
+	            <td><b>Porcentaje de descuento</b></td>
+			</tr>
+			<tr>
+	            <td>#1</td>
+	            <td>A partir de <input type="text" name="numeroPrendas1" id="numeroPrendas1" size="1"/> artículos</td>
+	            <td><input type="text" id="descuento1" name="descuento1" size="1"/> % sobre el total</td>
+			</tr>
+			<tr>
+	            <td>#2</td>
+	            <td>A partir de <input type="text" name="numeroPrendas2" id="numeroPrendas2" size="1"/> artículos</td>
+	            <td><input type="text" id="descuento2" name="descuento2" size="1"/> % sobre el total</td>
+			</tr>
+			<tr>
+	            <td>#3</td>
+	            <td>A partir de <input type="text" name="numeroPrendas3" id="numeroPrendas3" size="1"/> artículos</td>
+	            <td><input type="text" id="descuento3" name="descuento3" size="1"/> % sobre el total</td>
+			</tr>
+		</table><br>
+		<input type="submit" name="modificar" value="Modificar descuentos" style="background-color: #000; border: none; color: white;padding: 25px 60px;text-align: center;font-weight: bold;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;cursor: pointer;" />
 	</form>
 
 	<?php

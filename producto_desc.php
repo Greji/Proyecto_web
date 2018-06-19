@@ -49,7 +49,6 @@
 			$M = "";
 			global $l;
 			$l = "";
-			//$dat = date("d", mktime(0, 0, 0, $mes, ($dia + $j), $anno));
 			$date = date("d", mktime(0, 0, 0, $mes, ($dia + $j), $anno));
 			$semana = date("l", mktime(0, 0, 0, $mes, ($dia + $j), $anno));
 			$mes = date("M", mktime(0, 0, 0, $mes, ($dia + $j), $anno));
@@ -64,7 +63,8 @@
 		$hoy = date("d M Y");
 		fechita($hoy);
 
-		echo("<div class='hola'> <div class='responsive'>
+		echo("<form action='compra.php' method='POST' align='center'>
+			<div class='hola'> <div class='responsive'>
 	      		<div class='gallery'><a href='producto_desc.php?producto=".$filas['id_producto']."'>
 	      		<img src='".$filas['direccion']."' alt='".$filas['nombre']."' width='300' height='200'></a>
 		        <div class='desc' style='margin-top: -10%;'><i><H3>".$filas['nombre']."</H3></i>
@@ -88,10 +88,10 @@
 			  	<br><input type='submit' class='button' name='' value='Agregar al carrito' style='background-color: #000; border: none; color: white;padding: 25px 60px;text-align: center;font-weight: bold;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;cursor: pointer;  margin-bottom: -10%;'/>
 >>>>>>> 7c76ebed11bb8c40ecf862f60b61b0dd3ed09412
 		        </div>
-		      </div><br>
+		      </div></form><br>
 		      </div>
 		      <div align='center' class='center'><H3><i>".$filas['descripcion']."</i></H3><br>
-		      <H2> Si realizas tu pedido hoy, la fecha de entrega será el ".$l." ".$date." de ".$M." (tres días hábiles) </H2></div>
+		      <H2> Si realizas tu pedido hoy, la fecha de entrega será el ".$l." ".$date." de ".$M." (tres días hábiles)</H2></div>
 		    </div>");
 	}
   ?>

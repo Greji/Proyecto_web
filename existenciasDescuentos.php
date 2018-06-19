@@ -65,8 +65,7 @@
             Agregar <input type='text' name='agregarEx' size='1'/> productos. <br>
             <input type='submit' class='button' name='Agregar' value='Agregar' align='center'/>
             </td></tr>";
-
-        }
+    }
 
     echo "</table></form></form>";
 
