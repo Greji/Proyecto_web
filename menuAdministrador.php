@@ -22,19 +22,29 @@ if($_COOKIE['idioma']=='en'){
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
+	<style type="text/css">
+		.nada{
+			background-color:#000;
+			color:#fff;
+			text-decoration:none;
+			padding:10px 12px;
+			display:block; 
+			font-weight: bold
+		}
+	</style>
 	<nav>
 		<div class="contenido">
 			<div class="izq"><img src="morango.jpg"></div>
 			<div class="der">
 					<a href="iniciarsesion.php"> 👤 Iniciar sesión</a> 
 					<a href="registrate.php"> ➽	Registrarse</a>
-
-					
-
 			</div>
 		</div>
 		<ul class="nav">
 			<li><a href="index.php">Inicio</a></li>
+			<li><a href="agregar_producto.php">Agregar producto</a></li>
+			<li class="nada">Productos:</li>>
+
 			<li><a href="productoAdministrador.php?tipo=0">Mujeres</a>
 				<ul>
 					<li><a href="productoAdministrador.php?tipo=1">Accesorios</a></li>
@@ -54,7 +64,7 @@ if($_COOKIE['idioma']=='en'){
 				</ul>
 			</li>
 			<li><a href="descuentoAdministrador.php">Modificar descuentos</a></li>
-			<li><a href="compraAdministrador.php">Compras</a></li>
+			<li><a href="comprasAdministrador.php">Compras</a></li>
 
 		</ul>
 	</nav>

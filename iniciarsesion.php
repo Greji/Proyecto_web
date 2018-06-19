@@ -12,7 +12,7 @@
 	<?php require "menu.php" ?>
 	</div>
 
-	<br><br><br><br><br><br><br><br><br><br><H1 align="center">¡Inicia sesión y realiza tus compras!</H1>
+	<br><br><br><br><br><br><H1 align="center">¡Inicia sesión y realiza tus compras!</H1>
 
 	<form action="iniciarsesion.php" id="a1" align="center" method="post">
 		<table align="center">
@@ -50,16 +50,8 @@
 				
 			}else{
 				echo '<script>alert("Correo o contraseña incorrecta")</script>';
-			}
-
-			
-
-
-
-			
+			}	
 		}
-		
-
 	 ?>
 
 	<?php

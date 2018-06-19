@@ -55,11 +55,10 @@
 			$mes = date("M", mktime(0, 0, 0, $mes, ($dia + $j), $anno));
 			if ($semana == "Monday")	$l = "lunes";	if ($semana == "Tuesday")	$l = "martes";	if ($semana == "Wednesday")	$l = "miércoles";
 			if ($semana == "Thursday")	$l = "jueves";	if ($semana == "Friday")	$l = "viernes";	
-			if ($mes == "Juanuary")	$M = "enero";	if ($mes == "February")	$M = "febrero";	if ($mes == "March")	$M = "marzo";	
-			if ($mes == "April")	$M = "abril";	if ($mes == "May")	$M = "mayo";	if ($mes == "May")	$M = "mayo";	
-			if ($mes == "May")	$M = "mayo";	if ($mes == "June")	$M = "junio";	if ($mes == "July")	$M = "julio";	
-			if ($mes == "August")	$M = "agosto";	if ($mes == "September")	$M = "septiembre";	if ($mes == "October")	$M = "octubre";	
-			if ($mes == "November")	$M = "noviembre";	if ($mes == "December")	$M = "diciembre";			
+			if ($mes == "Jan")	$M = "enero";	if ($mes == "Feb")	$M = "febrero";	if ($mes == "Mar")	$M = "marzo";	
+			if ($mes == "Apr")	$M = "abril";	if ($mes == "May")	$M = "mayo";	if ($mes == "Jun")	$M = "junio";	
+			if ($mes == "Jul")	$M = "julio";	if ($mes == "Aug")	$M = "agosto";	if ($mes == "Sep")	$M = "septiembre";	
+			if ($mes == "Oct")	$M = "octubre";	if ($mes == "Nov")	$M = "noviembre";	if ($mes == "Dec")	$M = "diciembre";			
 		}
 
 		$hoy = date("d M Y");
@@ -68,25 +67,56 @@
 		echo("<div class='hola'> <div class='responsive'>
 	      		<div class='gallery'><a href='producto_desc.php?producto=".$filas['id_producto']."'>
 	      		<img src='".$filas['direccion']."' alt='".$filas['nombre']."' width='300' height='200'></a>
-		        <div class='desc'>".$filas['nombre']." 
-		        <br>Precio:  $".$filas['precio']." 
+		        <div class='desc' style='margin-top: -10%;'><i><H3>".$filas['nombre']."</H3></i>
+		        <b>Precio:  </b>$".$filas['precio']." 
 		        <br>
-		        Talla:
-		        <select name='talla'>
-				  <option value='S'>S</option> 
-				  <option value='M' selected>M</option>
-				  <option value='L'>L</option>
-			  	</select>
-			  	<br><input type='submit' class='boton' name='' value='Agregar al carrito' />
+<<<<<<< HEAD
+		        <form action='carrito.php' method='post'>
+		        <input type='hidden' name='id_producto' value='".$filas['id_producto']."'>
+		        <input type='hidden' name='direccion' value='".$filas['direccion']."'>
+		        <input type='hidden' name='nombre' value='".$filas['nombre']."'>
+		        <input type='hidden' name='precio' value='".$filas['precio']."'>
+		        Cantidad <br>
+		        <input type='button' id='menos' name='menos' value='-' onclick='decrementar();' /> 
+		        <input type='text' id='cantidad' name='cantidad' value='1' width='30px'/> <input type='button' id='mas' name='mas' value='+' onclick='agregar();' /> 
+			  	<br><input type='submit' class='boton' name='' value='Agregar al carrito' /> </form>
+=======
+			  	<br><input type='submit' class='button' name='' value='Agregar al carrito' style='background-color: #000; border: none; color: white;padding: 25px 60px;text-align: center;font-weight: bold;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;cursor: pointer;  margin-bottom: -10%;'/>
+>>>>>>> 7c76ebed11bb8c40ecf862f60b61b0dd3ed09412
 		        </div>
 		      </div><br>
 		      </div>
-		      <div align='center' class='center'><H2> Si realizas tu pedido hoy, la fecha de entrega será el ".$l." ".$date." de ".$M."  (tres días hábiles) </H2></div>
+		      <div align='center' class='center'><H3><i>".$filas['descripcion']."</i></H3><br>
+		      <H2> Si realizas tu pedido hoy, la fecha de entrega será el ".$l." ".$date." de ".$M." (tres días hábiles) </H2></div>
 		    </div>");
 	}
   ?>
 
   <div class='clearfix'></div>
+
+
+
+  <script type="text/javascript">
+  	
+  	function agregar(){
+
+  		 
+
+  		document.getElementById('cantidad').value++;
+  	}
+
+  	function decrementar(){
+
+  		var aux =document.getElementById('cantidad').value;
+
+  		if (aux > 1) {
+  			document.getElementById('cantidad').value--;
+  		}
+  	}
+
+
+  </script>
+
   <?php include "pie.php" ?>
 
 </body>
