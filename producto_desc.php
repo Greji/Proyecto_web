@@ -67,20 +67,15 @@
 		echo("<div class='hola'> <div class='responsive'>
 	      		<div class='gallery'><a href='producto_desc.php?producto=".$filas['id_producto']."'>
 	      		<img src='".$filas['direccion']."' alt='".$filas['nombre']."' width='300' height='200'></a>
-		        <div class='desc'>".$filas['nombre']." 
-		        <br>Precio:  $".$filas['precio']." 
+		        <div class='desc' style='margin-top: -10%;'><i><H3>".$filas['nombre']."</H3></i>
+		        <b>Precio:  </b>$".$filas['precio']." 
 		        <br>
-		        Talla:
-		        <select name='talla'>
-				  <option value='S'>S</option> 
-				  <option value='M' selected>M</option>
-				  <option value='L'>L</option>
-			  	</select>
-			  	<br><input type='submit' class='button' name='' value='Agregar al carrito' style='background-color: #000; border: none; color: white;padding: 25px 60px;text-align: center;font-weight: bold;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;cursor: pointer;'/>
+			  	<br><input type='submit' class='button' name='' value='Agregar al carrito' style='background-color: #000; border: none; color: white;padding: 25px 60px;text-align: center;font-weight: bold;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;cursor: pointer;  margin-bottom: -10%;'/>
 		        </div>
 		      </div><br>
 		      </div>
-		      <div align='center' class='center'><H2> Si realizas tu pedido hoy, la fecha de entrega será el ".$l." ".$date." de ".$M."  (tres días hábiles) </H2></div>
+		      <div align='center' class='center'><H3><i>".$filas['descripcion']."</i></H3><br>
+		      <H2> Si realizas tu pedido hoy, la fecha de entrega será el ".$l." ".$date." de ".$M." (tres días hábiles) </H2></div>
 		    </div>");
 	}
   ?>

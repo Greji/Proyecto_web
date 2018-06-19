@@ -43,7 +43,8 @@
 			$mysqli -> query($sql);
 			*/
 
-			mysqli_query($mysqli, "INSERT INTO producto(id_tipo,nombre,descripcion,precio,existencias,direccion) VALUES ('$tipo','$nombre','$descrip','$precio','$stock','$ubicacion'");
+			mysqli_query($mysqli, "INSERT INTO producto(id_tipo,nombre,descripcion,precio,existencias,direccion) VALUES ($tipo,'$nombre','$descrip',$precio,$stock,'$ubicacion')");
+			 echo "INSERT INTO producto(id_tipo,nombre,descripcion,precio,existencias,direccion) VALUES ($tipo,'$nombre','$descrip',$precio,$stock,'$ubicacion')";
 		}
 		else
 			echo "<div class = 'error'> Error: El formato del archivo debe ser JPG o PNG</div>";
