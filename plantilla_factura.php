@@ -1,4 +1,5 @@
 <?php
+	//$connect = new mysqli("localhost", "id4738320_admin", "morango123", "id4738320_morango");
 	$mysqli = new mysqli("localhost","root","","morango"); 
 	
 	if(mysqli_connect_errno()){
@@ -13,7 +14,10 @@
 		function Header(){
 			global $usuario;
 			global $mysqli;
-			$query = "SELECT id_usuario FROM usuarios WHERE email ='$usuario'";
+			$query = "SELECT id_usuario, nombre, email, telefono FROM usuario WHERE nombre =  ".$_SESSION['username'];
+			//$query = "SELECT id_usuario, nombre, email, telefono FROM usuario WHERE nombre =  Greta Jimena";
+			$resultado1 = $mysqli->query($query);
+			$query = "SELECT MAX(id_factura), fecha FROM factura WHERE id_usuario =  ".$resultado1['id_usuario']; //modificar para consultar productos
 			$row = $mysqli->query($query);
 
 			//$usuario_factura = $row->fetch_assoc();
@@ -22,18 +26,11 @@
 			//$row = $mysqli->query($query);
 
 			//$numfactura = $row->fetch_assoc();
-			$this->Image('morango.jpg', 5, 5, 30 );
-			$this->Cell(0, 20,'Factura #',0,0,'C');
-
-			
-			
+			$this->Image('morango.jpg', 5, 5, 60 );
 			$this->SetFont('Arial','B',15);
 			$this->Cell(30);
-			$this->Cell(120,10, 'Facturacion de compra',0,0,'C');
-			$this->Ln(20);
-			$this->SetFont('Arial','B',15);
-			$this->Cell(30);
-			$this->Cell(120,10, 'Facturacion de compra',0,0,'C');
+			
+			$this->Cell(120,10, 'Factura de compra #'.$row['id_factura'],0,0,'C');
 			$this->Ln(20);
 		}
 		
