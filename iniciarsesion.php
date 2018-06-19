@@ -9,7 +9,8 @@
 </head>
 <body>
 	<div>
-	<?php require "menu.php" ?>
+	<?php require "menu.php";
+	session_start(); ?>
 	</div>
 
 	<br><br><br><br><br><br><H1 align="center">¡Inicia sesión y realiza tus compras!</H1>

@@ -5,6 +5,12 @@
 	<title>Ejemplo de carrito</title>
 </head>
 <body>
+	<form action="carrito.php" method="POST">
+		<input type="submit" name="vaciar" value="Vaciar">
+		<input type="submit" name="comprar" value="Comprar">
+
+	</form>
+
 	<table>
 
 <?php 
@@ -27,6 +33,8 @@
 	if(isset($_POST['vaciar'])) {
 		unset($_COOKIE['carrito']);
 	}
+
+
 
 	//Obtenemos los productos anteriores
 
@@ -64,11 +72,31 @@
 
 			$fPrecioTotal += $value['precio'];
 		}
+
+	if (isset($_POST['comprar'])) {  //Si se presiona el botón comprar de arriba, se ejecuta primero un insert a factura
+
+		mysqli_query($connect, "INSERT INTO factura (id_usuario, total, fecha, fecha_entrega, estado) VALUES('$value['id_usuario']', '$fPrecioTotal', '')") or die('<script>alert("Murio")</script>'); 
+
+		//Luego se insertan todos los campos de detalle_factura
+
+		$consulta = mysqli_query($connect, "SELECT MAX(id_factura) AS id_factura FROM factura WHERE id_usuario=$id_usuario") or die('<script>alert("Murio")</script>'); 
+
+
+		foreach ($aCarrito as $key => $value) {
+
+			$subtotal = $value['cantidad']*$value['precio'];
+
+			mysqli_query($connect, "INSERT INTO detalle_factura (id_factura, id_producto, cantidad, precio) VALUES('$id_factura', '$$value['id_producto']', '$values['cantidad']', $subtotal)") or die('<script>alert("Murio")</script>');
+		}
+		
+	}
 		
 
 	//Imprimimos el precio total
 
 	$sHTML .= '<br>------------------<br>Precio total: ' . $fPrecioTotal;
+
+
 
 ?>
 

@@ -1,4 +1,5 @@
 <?php 
+//session_start();
 if(!isset($_COOKIE['idioma'])){
      header("Location: index.php");
 }
@@ -36,8 +37,8 @@ if($_COOKIE['idioma']=='en'){
 		<div class="contenido">
 			<div class="izq"><img src="morango.jpg"></div>
 			<div class="der">
-					<a href="iniciarsesion.php"> 👤 Iniciar sesión</a> 
-					<a href="registrate.php"> ➽	Registrarse</a>
+			Bienvenido, <b>administrador</b>
+					<a href="cerrarsesion.php">  ➽	Cerrar sesion</a>
 			</div>
 		</div>
 		<ul class="nav">

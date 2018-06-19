@@ -1,4 +1,5 @@
 <?php 
+	//session_start();
 if(!isset($_COOKIE['idioma'])){
      header("Location: index.php");
 }
@@ -26,10 +27,16 @@ if($_COOKIE['idioma']=='en'){
 		<div class="contenido">
 			<div class="izq"><img src="morango.jpg"></div>
 			<div class="der">
-					<a href="iniciarsesion.php"> 👤 Iniciar sesión</a> 
-					<a href="registrate.php"> ➽	Registrarse</a>
-
-					
+				<?php 
+					if (session_status() == PHP_SESSION_NONE){
+						echo "<a href='iniciarsesion.php'> 👤 Iniciar sesion</a> 
+						<a href='registrate.php'> ➽	Registrarse</a>";
+					}
+					if ((session_status() == PHP_SESSION_ACTIVE) && ($_SESSION["username"] != NULL)){
+						echo "Bienvenido, <b>".$_SESSION['username']."</b>
+						<a href='cerrarsesion.php'> ➽	Cerrar sesion</a>";
+					}
+				?>
 
 			</div>
 		</div>

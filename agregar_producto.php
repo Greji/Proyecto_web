@@ -10,7 +10,6 @@
 <body>
 
 <?php
-
 	$mysqli = new mysqli("localhost", "root", "", "morango");
 	if(mysqli_connect_error()){
 		die("Error al conectar: " .mysql_error());
@@ -52,7 +51,7 @@
 	?>
 
 	<div>
-	    <?php include 'menu.php';?>
+	    <?php include 'menuAdministrador.php';?>
 	</div>
 
 	<form enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST" align="center">
